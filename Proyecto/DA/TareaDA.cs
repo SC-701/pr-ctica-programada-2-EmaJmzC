@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abstracciones.DA;
+﻿using Abstracciones.DA;
 using Abstracciones.Modelos;
 using Helpers;
 using Dapper;
-using Microsoft.Data.SqlClient;
 using System.Data.SqlClient;
 
 namespace DA

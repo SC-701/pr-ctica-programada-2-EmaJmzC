@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE dbo.Tarea_Delete
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    DELETE FROM dbo.Tarea WHERE Id = @Id
+END

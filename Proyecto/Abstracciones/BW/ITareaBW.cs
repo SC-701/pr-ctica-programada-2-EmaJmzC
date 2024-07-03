@@ -9,14 +9,10 @@ namespace Abstracciones.BW
 {
     public interface ITareaBW
     {
-        public Task<IEnumerable<Tarea>> Obtener();
-
-        public Task<IEnumerable<Tarea>> ObtenerPorCreador(Guid Creador);
-
-        public Task<Guid> Agregar(Tarea tarea);
-
-        public Task<Guid> Editar(Tarea tarea);
-
-        public Task<Guid> Eliminar(Guid Id);
+        Task<Guid> Agregar(Tarea tarea);
+        Task<Guid> Editar(Tarea tarea);
+        Task<Guid> Eliminar(Guid Id);
+        Task<IEnumerable<Tarea>> Obtener();
+        Task<IEnumerable<Tarea>> ObtenerPorCreador(Guid Creador);
     }
 }

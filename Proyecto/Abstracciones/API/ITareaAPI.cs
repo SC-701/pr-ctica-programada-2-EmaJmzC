@@ -10,6 +10,8 @@ namespace Abstracciones.API
 {
     public interface ITareaAPI
     {
+        //Recordar Data Annotations
+
         [HttpGet]
         public Task<IActionResult> Obtener();
 
@@ -23,6 +25,6 @@ namespace Abstracciones.API
         public Task<IActionResult> Editar(Tarea tarea);
 
         [HttpDelete]
-        public Task<IActionResult> Eliminar(Guid Id);;
+        public Task<IActionResult> Eliminar(Guid Id);
     }
 }

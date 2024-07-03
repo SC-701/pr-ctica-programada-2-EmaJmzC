@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE dbo.Tarea_Select
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    SELECT * FROM dbo.Tarea WHERE Id = @Id
+END

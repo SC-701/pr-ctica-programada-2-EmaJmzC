@@ -2,6 +2,7 @@
 using Abstracciones.DA;
 using Abstracciones.BC;
 using Abstracciones.Modelos;
+using Abstracciones.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace BW
         {
             _tareaDA = tareaDA;
         }
+
         public async Task<Guid> Agregar(Abstracciones.Modelos.Tarea tarea)
         {
             return await _tareaDA.Agregar(tarea);
