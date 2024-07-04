@@ -1,4 +1,4 @@
-﻿using Abstracciones.Entidades;
+﻿using Abstracciones.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

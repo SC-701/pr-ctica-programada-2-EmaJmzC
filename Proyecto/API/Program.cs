@@ -1,3 +1,8 @@
+using Abstracciones.BW;
+using Abstracciones.DA;
+using BW;
+using DA;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +12,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ITareaBW, TareaBW>();
+builder.Services.AddScoped<ITareaDA, TareaDA>();
+builder.Services.AddScoped<IRepositorioDapper, RepositorioDapper>();
+
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

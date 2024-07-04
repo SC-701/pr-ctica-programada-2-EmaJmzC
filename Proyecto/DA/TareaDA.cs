@@ -19,28 +19,28 @@ namespace DA
 
         public async Task<Guid> Agregar(Tarea tarea)
         {
-            string sql = @"CrearTarea";
+            string sql = @"Tarea_Insert";
             await _sqlConnection.QueryAsync<Abstracciones.Entidades.Tarea>(sql, new { Id = tarea.Id, Nombre = tarea.Nombre, Descripcion = tarea.Descripcion, FechaInicio = tarea.FechaInicio, FechaFinal = tarea.FechaFinal, Asignado = tarea.Asignado, Estado = tarea.Estado, Creador = tarea.Creador });
             return tarea.Id;
         }
 
         public async Task<Guid> Editar(Tarea tarea)
         {
-            string sql = @"ActualizarTarea";
+            string sql = @"Tarea_Update";
             await _sqlConnection.QueryAsync<Abstracciones.Entidades.Tarea>(sql, new { Id = tarea.Id, Nombre = tarea.Nombre, Descripcion = tarea.Descripcion, FechaInicio = tarea.FechaInicio, FechaFinal = tarea.FechaFinal, Asignado = tarea.Asignado, Estado = tarea.Estado, Creador = tarea.Creador });
             return tarea.Id;
         }
 
         public async Task<Guid> Eliminar(Guid Id)
         {
-            string sql = @"EliminarTarea";
+            string sql = @"Tarea_Delete";
             await _sqlConnection.QueryAsync<Abstracciones.Entidades.Tarea>(sql, new { Id = Id });
             return Id;
         }
 
         public async Task<IEnumerable<Abstracciones.Modelos.Tarea>> Obtener()
         {
-            string sql = @"ListarTareas";
+            string sql = @"Tarea_Select";
             var resultadoConsulta = await _sqlConnection.QueryAsync<Abstracciones.Entidades.Tarea>(sql);
             if (!resultadoConsulta.Any())
                 return null;
@@ -49,7 +49,7 @@ namespace DA
 
         public async Task<IEnumerable<Tarea>> ObtenerPorCreador(Guid Creador)
         {
-            string sql = @"ListarTareasPorCreador";
+            string sql = @"Tarea_CreadasPorUsuario";
             var resultadoConsulta = await _sqlConnection.QueryAsync<Abstracciones.Entidades.Tarea>(sql, new { Creador = Creador });
             if (!resultadoConsulta.Any())
                 return null;
